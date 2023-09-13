@@ -1,6 +1,4 @@
-import 'package:ecommerce/domain/models/favourites.dart';
 import 'package:ecommerce/domain/models/product.dart';
-import 'package:ecommerce/services/db_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +19,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         leading: IconButton(
           onPressed: () {},
           icon:  IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
             onPressed: () => Navigator.of(context).pop(),
           ),
         ),

@@ -1,4 +1,6 @@
 import 'package:ecommerce/domain/models/product.dart';
+import 'package:ecommerce/presentation/components/custom_product_widget.dart';
+import 'package:ecommerce/presentation/screens/details_screen.dart';
 import 'package:ecommerce/presentation/screens/home_screen.dart';
 import 'package:ecommerce/services/db_service.dart';
 import 'package:flutter/material.dart';
@@ -27,19 +29,27 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
             const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               // crossAxisSpacing: 10,
-              childAspectRatio: 2 / 3.6,
+              childAspectRatio: 2 / 3.3,
             ),
             itemCount: products.length,
             itemBuilder: (context, index) {
               final product = products[index];
-              return CustomProductWidget(
-                onPressedCart: () => {},
-                product: product,
+              return InkWell(
+                onTap: () => {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => DetailsScreen(product: product),
+                    ),
+                  )
+                },
+                child: CustomProductWidget(
+                  color: Colors.primaries[index%17],
+                  product: product,
+                ),
               );
             },
           ),
         ),
-          
       ],
     );
   }

@@ -23,7 +23,7 @@ Future<void> setupLocator() async {
   // final SqlDatabase database = SqlDatabase();
   // await database.init();
   // locator.registerLazySingleton<SqlDatabase>(() => database);
-  locator.registerSingleton(SqlDatabase)
+  locator.registerSingleton(SqlDatabase);
 
 
   //Repositories
