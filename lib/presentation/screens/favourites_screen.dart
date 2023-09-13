@@ -11,16 +11,11 @@ class FavouritesScreen extends StatefulWidget {
 }
 
 class _FavouritesScreenState extends State<FavouritesScreen> {
-  final databaseHelper = SqlDatabase();
 
   @override
   Widget build(BuildContext context) {
     List<ProductModel>products=[];
-    allFavouriteProducts() async {
-      products= await databaseHelper.getAllProducts();
 
-    }
-    allFavouriteProducts();
 
     return  Stack(
       children: [

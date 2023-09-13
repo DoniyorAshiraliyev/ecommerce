@@ -14,7 +14,6 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
-  final databaseHelper = SqlDatabase();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +30,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
             padding: const EdgeInsets.only(right: 25),
             child: IconButton(
               onPressed: () async {
-                databaseHelper.insertProduct(widget.product);
 
 
               },
